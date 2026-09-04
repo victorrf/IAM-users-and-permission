@@ -12,6 +12,8 @@ O cenário utilizou três usuários:
 
 A partir dessas funções, cada usuário deveria receber somente as permissões necessárias para realizar suas atividades.
 
+<img src="images/lab-resumido.png" alt="lab resumido" style="width: 600px; height: 300px;">
+
 
 ## Objetivo
 
@@ -45,6 +47,8 @@ Impedimento do reutilização das últimas **5 senhas**.
 Essa configuração estabelece um padrão de segurança para as credenciais dos usuários associados à conta.
 
 ### 2. Análise dos usuários e grupos
+
+<img src="images/1-listed-IAM-users-and-groups.png" alt="politica de usuários IAM" style="width: 600px; height: 300px;">
 
 Foram analisados os usuários previamente criados no ambiente:
 
@@ -126,6 +130,8 @@ O usuário conseguiu:
 
 Porém, ao tentar acessar o Amazon EC2, recebeu uma mensagem informando que não possuía autorização para realizar a operação.
 
+<img src="images/2-Sign-user-1-out-of-the-AWS.png" alt="Saindo do user-1" style="width: 400px; height: 300px;">
+
 **Resultado esperado:** acesso ao S3, sem acesso ao EC2.
 
 `user-2` — **EC2 Support**
@@ -138,9 +144,13 @@ O usuário conseguiu:
 
 Porém, ao tentar interromper uma instância, recebeu um erro informando que não possuía autorização para realizar essa operação.
 
+<img src="images/3-Stop.png" alt="Sem permissão para parar a instância EC2" style="width: 800px; height: 300px;">
+
 Também não conseguiu listar os buckets do Amazon S3.
 
 **Resultado esperado:** acesso de leitura ao EC2, sem permissão para modificar recursos e sem acesso ao S3.
+
+<img src="images/4-Sign-user-2-out-of-the-AWS.png" alt="Saindo do user-2" style="width: 400px; height: 300px;">
 
 `user-3` — **EC2 Admin**
 
@@ -189,9 +199,9 @@ Este laboratório foi importante para compreender que **gerenciar permissões na
 
 As permissões podem ser definidas de maneira muito mais específica, determinando:
 
-**- Effect →** se uma ação será permitida ou negada;
-**- Action →** quais ações da API podem ser executadas;
-**- Resource →** sobre quais recursos a permissão se aplica.
+- **Effect →** se uma ação será permitida ou negada;
+- **Action →** quais ações da API podem ser executadas;
+- **Resource →** sobre quais recursos a permissão se aplica.
 
 Um dos principais aprendizados foi observar isso funcionando na prática.
 
@@ -232,6 +242,8 @@ Esse processo foi importante para entender que **um erro de autorização nem se
 
 
 ## Conclusão
+
+<img src="images/Lab-resultado.png" alt="Resultado do Projeto" style="width: 650px; height: 400px;">
 
 Este projeto demonstrou como o **AWS IAM** pode ser utilizado para estruturar o acesso aos recursos de uma organização de acordo com as responsabilidades de cada usuário.
 
